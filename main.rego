@@ -22,17 +22,15 @@ allow if {
 	access.allow_resource
 }
 
-rowFilters contains row_filter if {
-	row_filter := {"expression": "nationkey <> 2"}
-}
-
-columnMask := column_mask if {
-	input.context.identity.user != "admin"
-	input.action.operation == "GetColumnMask"
-	input.action.resource.column.columnName == "phone"
-	input.action.resource.column.tableName == "customer"
-	input.action.resource.column.schemaName == "sf1"
-	input.action.resource.column.catalogName == "tpch"
-
-	column_mask := {"expression": "CAST(CONCAT('XXX-XXX-', substring(phone, -4)) AS VARCHAR(15))"}
-}
+# rowFilters contains row_filter if {
+# 	row_filter := {"expression": "nationkey <> 2"}
+# }
+# columnMask := column_mask if {
+# 	input.context.identity.user != "admin"
+# 	input.action.operation == "GetColumnMask"
+# 	input.action.resource.column.columnName == "phone"
+# 	input.action.resource.column.tableName == "customer"
+# 	input.action.resource.column.schemaName == "sf1"
+# 	input.action.resource.column.catalogName == "tpch"
+# 	column_mask := {"expression": "CAST(CONCAT('XXX-XXX-', substring(phone, -4)) AS VARCHAR(15))"}
+# }
