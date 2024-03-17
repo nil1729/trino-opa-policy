@@ -1,6 +1,6 @@
-package validations
+package beta.validations
 
-import data.users
+import data.beta.groups
 import future.keywords.if
 import future.keywords.in
 
