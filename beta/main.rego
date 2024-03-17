@@ -1,7 +1,7 @@
 package beta.policies
 
-import data.access
 import data.admin
+import data.beta.access
 import data.beta.groups
 import data.context
 import future.keywords.contains
@@ -21,5 +21,5 @@ allow if {
 	# print(input)
 	some group in context.groups
 	groups.if_group_exists(group)
-	# access.allow_resource
+	access.allow_resource
 }
