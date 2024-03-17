@@ -1,4 +1,4 @@
-package experimental.db
+package beta.db
 
 groups := data.experimental.external.groups
 

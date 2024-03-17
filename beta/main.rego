@@ -1,9 +1,9 @@
-package experimental.policies
+package beta.policies
 
 import data.access
 import data.admin
+import data.beta.groups
 import data.context
-import data.experimental.groups
 import future.keywords.contains
 import future.keywords.if
 import future.keywords.in
@@ -20,6 +20,6 @@ allow if {
 allow if {
 	# print(input)
 	some group in context.groups
-	experimental.groups.if_group_exists(group)
+	beta.groups.if_group_exists(group)
 	# access.allow_resource
 }
