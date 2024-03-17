@@ -20,6 +20,6 @@ allow if {
 allow if {
 	# print(input)
 	some group in context.groups
-	beta.groups.if_group_exists(group)
+	groups.if_group_exists(group)
 	# access.allow_resource
 }
