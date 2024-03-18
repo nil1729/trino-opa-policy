@@ -1,3 +1,5 @@
+./access
 ./db
 ./groups
+./validations
 main.rego

@@ -18,7 +18,14 @@ table_name := context.resource.table.tableName
 
 column_names := context.resource.table.columns
 
+column_name := context.resource.table.column
+
 operation := context.operation
+
+allow_for_resource_column if {
+	operation == trino.operations.filter_columns
+	validations.user_can_access_column(user_id, catalog_name, schema_name, table_name, column_name)
+}
 
 allow_for_resource_column if {
 	operation == trino.operations.filter_columns

@@ -1,5 +1,5 @@
 ## OPA Policies
 
-### Acknowledgements
+### References
 
 - [Trino OPA Example](https://github.com/DragonPomelo/trino-opa-example)
