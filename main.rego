@@ -3,6 +3,7 @@ package policies
 import data.access
 import data.admin
 import data.context
+import data.trino
 import data.users
 import future.keywords.contains
 import future.keywords.if
@@ -30,7 +31,7 @@ batch contains i if {
 
 batch contains i if {
 	some i
-	input.action.operation == "FilterColumns"
+	input.action.operation == trino.operations.filter_columns
 	count(input.action.filterResources) == 1
 	raw_resource := input.action.filterResources[0]
 	count(raw_resource.table.columns) > 0
