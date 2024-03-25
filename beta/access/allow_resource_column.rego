@@ -19,7 +19,15 @@ table_name := context.resource.table.tableName
 
 column_names := context.resource.table.columns
 
+column_name := context.resource.table.column
+
 operation := context.operation
+
+allow_for_resource_column if {
+	operation == trino.operations.filter_columns
+	some group in user_groups
+	validations.group_can_access_column(group, catalog_name, schema_name, table_name, column_name)
+}
 
 allow_for_resource_column if {
 	operation == trino.operations.filter_columns
